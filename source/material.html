@@ -1,0 +1,23 @@
+<div ui-content-for="title">
+  <span>{{i18n.Material}}</span>
+</div>
+
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+	   <!--Limpa o menu -->
+    </div>
+
+<div class="scrollable" ui-state="searchBar">
+  <div class="scrollable-content" ui-scroll-bottom='bottomReached()'>
+    <div class="list-group">
+      <a ng-repeat="item in materialVO" ng-click="openLink(item.url)" href="" target="_blank" class="list-group-item">
+        {{ item.title }} <i class="fa fa-chevron-right pull-right"></i>
+      </a>
+    </div>
+  </div>
+</div>

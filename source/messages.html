@@ -1,0 +1,57 @@
+<div ui-content-for="title">
+  <span>{{ i18n.Messages }}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+<div ui-content-for="navbarAction">
+    <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="addMessage_Click()" ng-hide="addMessage"><i class="fa fa-plus"></i></button>
+        <button type="button" class="btn btn-link" ng-click="addMessage_Click()" ng-show="addMessage"><i class="fa fa-minus"></i></button>
+    </div>
+</div>
+
+<div class="scrollable">
+	<div class="section animate-show" ng-show="addMessage">
+		<form role="form">
+			<fieldset>
+				<div class="form-group">
+					<textarea id="msgText" class="form-control" ng-model="msgText" placeholder="{{i18n.Placeholder_Msg}}" ng-focus="true"></textarea>
+				</div>
+				<div class="form-group" ng-show="userVO.role==1">
+					<label>{{ i18n.Group  }}</label>
+					<select class="form-control" ng-model="toGroup" ng-bind-html="renderHtml(getGroupOptions())">
+					</select>
+				</div>
+				<div class="form-group" ng-show="userVO.role==1">
+					<label>{{ i18n.Student  }}</label>
+					<select class="form-control" ng-model="toStudent" ng-bind-html="renderHtml(getUserOptions())">
+					</select>
+				</div>
+				<div class="form-group" ng-show="userVO.role==0">
+					<input type="checkbox" name="teacher_notification" value="1" ng-model="teacherNotify" />{{i18n.TeacherNotification}}
+				</div>
+				<div class="form-group">
+					<button type="button" ng-hide="netConnection" ng-disabled="true" class="btn btn-danger btn-block">Off-line</button>
+					<button type="button" ng-show="netConnection" ng-click="sendMessage()" ng-disabled="msgText==undefined || msgText=='' || (userVO.role == 1 && toGroup == '')" class="btn btn-primary btn-block">{{i18n.Send}}</button>
+				</div>
+			</fieldset>
+		</form>     
+	</div>
+
+
+  <div class="scrollable-content">
+    <div class="list-group" ng-init="updateUserStatus()">
+		<div ng-repeat="msg in Messages" class="msg" ui-class="{'msg-prof': {{msg.teacher}} == true, 'msg-my': {{msg.received}} == false}">
+			<span class="msg-time">{{msg.date}} {{msg.hour}} - <b>{{msg.name}}: </b></span>
+			{{msg.text}}
+		</div>
+	</div>
+  </div>
+</div>
+</div>

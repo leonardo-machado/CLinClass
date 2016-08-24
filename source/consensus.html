@@ -1,0 +1,13 @@
+<div ui-content-for="title">
+  <span>{{i18n.Consensus}}</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content">
+    <div class="list-group" ng-init="initConsensus()">
+      <a ng-repeat="item in activitieVO" ng-click="executeConsensusActivity(item, false)" href="" class="list-group-item">
+        <i class="fa fa-check pull-left" ng-show="isConsensusExecuted(item)"></i><i class="fa fa-thumbs-o-up pull-left" ng-show="isConsensusConfirmed(item)"></i>{{ item.code }} - {{ item.name }} <img ng-show="item.type == 1" alt="" class="fa pull-right" src="choice-problem.png"></img> <img ng-show="item.type == 2" alt="" class="fa pull-right" src="parson-problem.png"></img> <img ng-show="item.type == 3" alt="" class="fa pull-right" src="open-problem.png">
+      </a>
+    </div>
+  </div>
+</div>

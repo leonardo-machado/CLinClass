@@ -1,0 +1,56 @@
+<div ui-content-for="title">
+  <span>{{i18n.Material}}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+       <div class="btn">
+           <button type="button" class="btn btn-link" ng-click="addMaterial_Click()" ng-hide="addMaterial"><i class="fa fa-plus"></i></button>
+           <button type="button" class="btn btn-link" ng-click="addMaterial_Click()" ng-show="addMaterial"><i class="fa fa-minus"></i></button>
+       </div>
+    </div>
+
+<div class="scrollable">
+	<div class="section animate-show" ng-show="addMaterial">
+		<form role="form">
+			<fieldset>
+				<div class="form-group">
+					<label>{{ i18n.Class  }}</label>
+					<select class="form-control" ng-model="material.classroom">
+					    <option ng-repeat="option in classVO" value="{{option.code}}">{{option.name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Id }}</label>
+					<input type="text" class="form-control" name="code" ng-model="material.code" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Name }}</label>
+					<input type="text" class="form-control" name="name" ng-model="material.title" />
+				</div>
+				<div class="form-group">
+                    <label>URL</label>
+					<input type="text" class="form-control" name="name" ng-model="material.url" />
+				</div>
+				<div class="form-group">
+					<button type="button" ng-click="saveMaterial()" class="btn btn-primary btn-block">{{i18n.Save}}</button>
+				</div>
+			</fieldset>
+		</form>     
+	</div>
+
+ <div class="scrollable-content">
+    <div class="list-group">
+      <span ng-repeat="item in materialVO" class="list-group-item">
+       {{ item.code }} - {{ item.title }} <br/><small>{{ getClassName(item.classroom) }}</small> <a href="" ng-click="removeMaterial(item)"><i class="fa fa-trash pull-right"></i></a>
+      </span>
+    </div>
+ </div>
+</div>
+</div>

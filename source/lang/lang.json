@@ -1,0 +1,220 @@
+// Portuguese
+$i18n_pt = 
+{AppTitle: 'CLinClass',
+ Messages: 'Mensagens',
+ Yes: 'Sim',
+ No: 'Não',
+ Ok: 'OK',
+ Cancel: 'Cancelar',
+ Exit: 'Sair',
+ Activity: 'Atividade',
+ Send: 'Enviar',
+ Confirm: 'Confirmação',
+ Test: 'Testar',
+ All: 'Todos',
+ Group: 'Grupo',
+ Monitor: 'Monitor',
+
+<!-- Login -->
+ Email: 'E-mail',
+ Password: 'Senha',
+ Role: 'Papel',
+ Enter: 'Entrar',
+ Student: 'Aluno',
+ Teacher: 'Professor',
+ Placeholder_Email: 'Digite o e-mail',
+ Placeholder_Pass: 'Digite a senha',
+ LoginFailure: 'Usuário e/ou senha inválido.\n Verifique os dados e tente novamente!',
+ LoginFailure1Access: 'Falha de autenticação.\n O primeiro acesso precisa ser realizado com o dispositivo conectado a Internet.',
+ RoleNotPermitted: 'Usuário não tem permissão para acessar como Professor.',
+ 
+ <!-- Menu -->
+ MyGroup: 'Meu grupo',
+ Consensus: 'Consenso',
+ Class: 'Turmas',
+ Students: 'Alunos',
+ Groups: 'Grupos',
+ Activities: 'Atividades',
+ Configuration: 'Configurações',
+ Material: 'Material',
+
+ <!-- Messages -->
+ Placeholder_Msg: 'Digite a mensagem...',
+ TeacherNotification: 'Notificar o professor',
+ NotSendMessageOffline: 'Não foi possível enviar a mensagem!\n Sistema sem conexão com a Internet.',
+ 
+ <!-- Configurations -->
+ Language: 'Idioma',
+ Portuguese: 'Português',
+ English: 'Inglês',
+ Save: 'Salvar',
+ CleanCaches: 'Limpar cache...',
+ MessageCache: 'Mensagens',
+ UserInfoCache: 'Informações de usuário',
+ ConfigCleaned: 'Limpeza de cache efetuada!',
+ ConfigSaved: 'Configuração salva com sucesso!',
+ 
+<!-- Class --> 
+ Class: 'Turmas',
+ NotSaveClassOffline: 'Não é possível salvar a Turma sem conexão com a Internet.',
+ Name: 'Nome',
+ NotRemoveClassOffline: 'Não é possível remover a Turma sem conexão com a Internet.',
+ ConfirmClassRemove: 'Confirma a exclusão da turma?',
+ 
+<!-- Student --> 
+ NotSaveStudentOffline: 'Não é possível salvar o aluno sem conexão com a Internet.',
+ NotRemoveStudentOffline: 'Não é possível remover o aluno sem conexão com a Internet.',
+ ConfirmStudentRemove: 'Confirma a exclusão do aluno?',
+
+<!-- Material --> 
+ NotSaveMaterialOffline : 'Não é possível salvar o material sem conexão com a Internet.',
+ NotRemoveMaterialOffline: 'Não é possível remover o material sem conexão com a Internet.',
+ ConfirmMaterialRemove: 'Confirma a exclusão do material?',
+
+<!-- Group --> 
+ NotSaveGroupOffline : 'Não é possível salvar o grupo sem conexão com a Internet.',
+ NotRemoveGroupOffline: 'Não é possível remover o grupo sem conexão com a Internet.',
+ ConfirmGroupRemove: 'Confirma a exclusão do grupo?',
+ Id : 'Id',
+ Active: 'Ativo',
+ Max_Member: 'Tamanho máximo',
+ NotInactiveGroupOffline: 'Não é possível desativar o grupo sem conexão com a Internet.',
+ ConfirmGroupInactive: 'Confirma a desativação do grupo?',
+ ChooseAGroup: 'Você precisa escolher um grupo de trabalho.', 
+ CompleteGroup: 'Completo', 
+ AvaliableGroup: 'Disponível',
+ ConfirmEnterGroup: 'Deseja entrar no grupo?',
+ MessagesRead: 'Mensagens lidas em',
+ ExecutedActivities: 'Atividades executadas',
+
+<!-- Activities --> 
+ Type: 'Tipo',
+ NotSaveActivitieOffline : 'Não é possível salvar a atividade sem conexão com a Internet.',
+ NotRemoveActivitieOffline: 'Não é possível remover a atividade sem conexão com a Internet.',
+ ConfirmActivitieRemove: 'Confirma a exclusão da atividade?',
+ Title: 'Título',
+ Description: 'Descrição',
+ Type_MultiChoiseProblem: 'Multipla escolha',
+ Type_ParsonProblem: 'Parson Problem',
+ Type_OpenProblem: 'Problema aberto',
+ OptionA: 'Opção A',
+ OptionB: 'Opção B',
+ OptionC: 'Opção C',
+ OptionD: 'Opção D',
+ Algorithm: 'Algoritmo',
+ TypeSolution: 'Digite sua solução...',
+ ConfirmSaveResponse: 'Deseja salvar a resposta? Após salva a resposta não pode ser alterada.',
+ ConfirmConsensusResponse: 'Confirma o consenso? Se não for confirmado, a resposta será removida!'
+ 
+};
+      
+// English	  
+$i18n_en = 
+{AppTitle: 'CLinClass',
+ Messages: 'Messages',
+ Yes: 'Yes',
+ No: 'No',
+ Ok: 'OK',
+ Cancel: 'Cancel',
+ Exit: 'Exit',
+ Activity: 'Activity',
+ Send: 'Send',
+ Confirm: 'Confirmation',
+ Test: 'Test',
+ All: 'All',
+ Group: 'Group',
+ Monitor: 'Monitor',
+
+<!-- Login -->
+ Email: 'E-mail',
+ Password: 'Password',
+ Role: 'Role',
+ Enter: 'Enter',
+ Student: 'Student',
+ Teacher: 'Teacher',
+ Placeholder_Email: 'Type your e-mail',
+ Placeholder_Pass: 'Type your password',
+ LoginFailure: 'User and/or password not valid.\n Check your data and try again!',
+ LoginFailure1Access: 'Login fail.\n The first access need Internet connection.',
+ RoleNotPermitted: 'Teacher role not allowed for user.',
+ 
+ <!-- Menu -->
+ MyGroup: 'My group',
+ Consensus: 'Consensus',
+ Class: 'Class',
+ Students: 'Students',
+ Groups: 'Groups',
+ Activities: 'Activities',
+ Configuration: 'Configuration',
+ Material: 'Lecture',
+
+ <!-- Messages -->
+ Placeholder_Msg: 'Type a message...',
+ TeacherNotification: 'Teacher notify',
+ NotSendMessageOffline: 'Send message is not possible!\n No Internet connection.',
+ 
+ <!-- Configurations -->
+ Language: 'Language',
+ Portuguese: 'Portuguese',
+ English: 'English',
+ Save: 'Save',
+ CleanCaches: 'Clean cache...',
+ MessageCache: 'Messages',
+ UserInfoCache: 'User information',
+ ConfigCleaned: 'Successful cache cleaned!',
+ ConfigSaved: 'Successful save configuration!',
+ 
+ <!-- Class --> 
+ Class: 'Class',
+ NotSaveClassOffline: 'No Internet connection for save Class.',
+ Name: 'Name',
+ NotRemoveClassOffline: 'No Internet connection for remove Class.',
+ ConfirmClassRemove: 'Confirm delete Class?',
+
+ <!-- Students --> 
+ NotSaveStudentOffline: 'No Internet connection for save Student.',
+ NotRemoveStudentOffline: 'No Internet connection for remove Student.',
+ ConfirmStudentRemove: 'Confirm delete Student?',
+
+ <!-- Lecture --> 
+ NotSaveMaterialOffline: 'No Internet connection for save Lecture.',
+ NotRemoveMaterialOffline: 'No Internet connection for remove Lecture.',
+ ConfirmMaterialRemove: 'Confirm delete Lecture?',
+ 
+ <!-- Group --> 
+ NotSaveGroupOffline: 'No Internet connection for save Group.',
+ NotRemoveGroupOffline: 'No Internet connection for remove Group.',
+ ConfirmGroupRemove: 'Confirm delete Group?',
+ Id : 'Id',
+ Active: 'Active',
+ Max_Member: 'Máx. Members',
+ NotInactiveGroupOffline: 'No Internet connection for inactive Group.',
+ ConfirmGroupInactive: 'Confirm inactive Group?',
+ ChooseAGroup: 'You need choose a workgroup.',
+ CompleteGroup: 'Completed', 
+ AvaliableGroup: 'Avaliable', 
+ ConfirmEnterGroup: 'You want enter in this workgroup?',
+ MessagesRead: 'Messages read in',
+ ExecutedActivities: 'Executed activities',
+
+<!-- Activities --> 
+ Type: 'Type',
+ NotSaveActivitieOffline : 'No Internet connection for save Activity.',
+ NotRemoveActivitieOffline: 'No Internet connection for remove Activity.',
+ ConfirmActivitieRemove: 'Confirm delete Activity?',
+ Title: 'Title',
+ Description: 'Description',
+ Type_MultiChoiseProblem: 'Multi Choise',
+ Type_ParsonProblem: 'Parson Problem',
+ Type_OpenProblem: 'Open Problem',
+ OptionA: 'Option A',
+ OptionB: 'Option B',
+ OptionC: 'Option C',
+ OptionD: 'Option D',
+ Algorithm: 'Algorithm',
+ TypeSolution: 'Type your solution...',
+ ConfirmSaveResponse: 'Confirm save response? Saved responses don\'t will allowed change.',
+ ConfirmConsensusResponse: 'Confirm consensus? If not confirmed, response will be removed!'
+
+};
+      	  

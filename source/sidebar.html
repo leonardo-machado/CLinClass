@@ -1,0 +1,23 @@
+<div class="scrollable">
+  <h1 class="scrollable-header app-name">Menu</h1>  
+  <div class="scrollable-content">
+    <div class="list-group" ui-turn-off='uiSidebarLeft'>
+	  <!-- Menu Aluno -->
+      <a class="list-group-item" href="#/menu" ng-show="userVO.role==0">{{ i18n.Activities }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/material" ng-show="userVO.role==0">{{ i18n.Material }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/mygroup" ng-show="userVO.role==0">{{ i18n.MyGroup }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/consensus" ng-show="userVO.role==0">{{ i18n.Consensus }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/configStudent" ng-show="userVO.role==0">{{ i18n.Configuration }} <i class="fa fa-chevron-right pull-right"></i></a>
+	  <!-- Menu Professor -->
+      <a class="list-group-item" href="#/menuProf" ng-show="userVO.role==1">{{ i18n.Monitor }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/class" ng-show="userVO.role==1">{{ i18n.Class }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/student" ng-show="userVO.role==1">{{ i18n.Students }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/groups" ng-show="userVO.role==1">{{ i18n.Groups }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/activities" ng-show="userVO.role==1">{{ i18n.Activities }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/materialCad" ng-show="userVO.role==1">{{ i18n.Material }} <i class="fa fa-chevron-right pull-right"></i></a>
+      <a class="list-group-item" href="#/configTeacher" ng-show="userVO.role==1">{{ i18n.Configuration }} <i class="fa fa-chevron-right pull-right"></i></a>
+
+	  <a class="list-group-item" href="#" onClick="exit()">{{ i18n.Exit }} <i class="fa fa-chevron-right pull-right"></i></a>
+    </div>
+  </div>
+</div>

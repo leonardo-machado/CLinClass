@@ -1,0 +1,88 @@
+<div ui-content-for="title">
+  <span>{{i18n.Consensus}}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+       <div class="btn">
+	        <!--href="#/messages"-->
+		    <a class="btn" href="" ng-click="goToMessagesFromConsensus();"><i class="fa fa-comment"></i><span class="badge" ng-show="msgNotRead > 0">{{msgNotRead}}</span></a>
+       </div>
+    </div>
+
+<div class="scrollable">
+ <div class="scrollable-content">
+   <div class="section">
+      <h3>{{consensusToExec.name}}</h3>
+	  <!--<span>{{consensusToExec.description}}</span>-->
+      <div style="width:99%;" ng-bind-html="renderHtml(consensusToExec.description)"></div>
+      <!-- Atividade de Multipla Escolha -->
+	  <form role="form" ng-show="consensusToExec.type == 1">
+	 	 <fieldset>
+			<input type="radio" ng-model="activityConsensusValue" name="radioOption" value="a" ng-disabled="activityConsensusExecuted"><span ng-click="optionClick('a')"> {{consensusToExec.optiona}}</span><br>
+			<input type="radio" ng-model="activityConsensusValue" name="radioOption" value="b" ng-disabled="activityConsensusExecuted"><span ng-click="optionClick('b')"> {{consensusToExec.optionb}}</span><br>
+			<input type="radio" ng-model="activityConsensusValue" name="radioOption" value="c" ng-disabled="activityConsensusExecuted"><span ng-click="optionClick('c')"> {{consensusToExec.optionc}}</span><br>
+			<input type="radio" ng-model="activityConsensusValue" name="radioOption" value="d" ng-disabled="activityConsensusExecuted"><span ng-click="optionClick('d')"> {{consensusToExec.optiond}}</span>
+			
+				<div class="form-group">
+					<button type="button" ng-click="saveGroupResponse()" class="btn btn-primary btn-block" ng-hide="activityConsensusExecuted">{{i18n.Save}}</button>
+				</div>
+	 	 </fieldset>
+	  </form>
+
+	  <form role="form" ng-show="consensusToExec.type == 2">
+		 <div ng-hide="activityConsensusExecuted" style="width:99%;" id="sortable" class="sortable-code"></div>
+         <div ng-hide="activityConsensusExecuted" style="width:99%;" ng-show="resultTestConsensus != ''" class="alert alert-danger" role="alert" ng-bind-html="renderHtml(resultTestConsensus)"></div>		 
+         <textarea ng-show="activityConsensusExecuted" ng-keyup="autoExpand($event)" rows="10" cols="40" id="solution" class="form-control" ng-model="activityConsensusValue" ng-disabled="activityConsensusExecuted"></textarea>
+		 
+		 <div class="form-group">
+		   <div class="btn-toolbar" role="toolbar">
+		    <div class="btn-group" role="group">
+			   <button type="button" ng-click="parsonTestConsensus()" class="btn btn-default" ng-hide="activityConsensusExecuted">{{i18n.Test}} <span class="badge" ng-show="activityTestCount > 0">{{activityTestCount}}</span></button>
+			</div>
+		    <div class="btn-group" role="group">
+			   <button type="button" ng-click="saveGroupResponse()" class="btn btn-primary btn-block" ng-hide="activityConsensusExecuted">{{i18n.Save}}</button>
+			</div>
+		   </div>
+		 </div>
+	  </form>
+	  
+      <!-- Atividade de Problema Livre -->
+	  <form role="form" ng-show="consensusToExec.type == 3">
+	 	 <fieldset>
+		    <textarea ng-keyup="autoExpand($event)" rows="10" cols="40" id="solution" class="form-control" ng-model="activityConsensusValue" placeholder="{{i18n.TypeSolution}}" ng-focus="true" ng-disabled="activityConsensusExecuted"></textarea>
+				<div class="form-group">
+					<button type="button" ng-click="saveGroupResponse()" class="btn btn-primary btn-block" ng-hide="activityConsensusExecuted">{{i18n.Save}}</button>
+				</div>
+	 	 </fieldset>
+	  </form>
+	  
+	  <div ng-show="activityConsensusExecuted && !activityConsensusConfirmed">
+	      <h5><b>{{i18n.ConfirmConsensusResponse}}</b></h5>
+		   <div class="btn-toolbar" role="toolbar">
+		    <div class="btn-group" role="group">
+			   <button type="button" ng-click="noConfirmConsensus()" class="btn btn-default">{{i18n.No}}</button>
+			</div>
+		    <div class="btn-group" role="group">
+			   <button type="button" ng-click="confirmConsensus()" class="btn btn-primary btn-block">{{i18n.Yes}}</button>
+			</div>
+		   </div>
+      </div>
+   </div>
+	
+	
+<!--	
+	<div class="list-group">
+      <span ng-repeat="item in activitieVO" class="list-group-item">
+       {{ item.code }} - {{ item.name }} <a href="" ng-click="removeActivitie(item)"><i class="fa fa-trash pull-right"></i></a> <br/> <small>{{ i18n.Class  }} : {{ getClassName(item.classroom) }}</small>       
+      </span>
+    </div> -->
+ </div>
+</div>
+</div>

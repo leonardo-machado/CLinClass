@@ -1,0 +1,48 @@
+<div ui-content-for="title">
+  <span>{{ i18n.AppTitle }}</span></br>
+  <h5 class="text-right"><small>V:1.0.2</small></h5>
+</div>
+
+<div class="scrollable">
+ <div class="scrollable-content section">
+   
+  <form role="form" ng-submit='login()'>
+    <fieldset>
+      <legend>Login</legend>
+        <div class="form-group has-feedback">
+          <label>{{ i18n.Email }}</label>
+          <input type="email"
+                 ng-model="userVO.email"
+                 class="form-control"
+                 placeholder="{{i18n.Placeholder_Email}}">
+        </div>
+
+        <div class="form-group">
+          <label>{{ i18n.Password }}</label>
+          <input type="password" 
+                 ng-model="userVO.password"
+                 class="form-control"
+                 placeholder="{{i18n.Placeholder_Pass}}">
+        </div>
+
+        <div class="form-group">
+          <label>{{ i18n.Role  }}</label>
+          <select class="form-control"
+                  ng-model="userVO.role"><option value="0">{{ i18n.Student }}</option><option value="1">{{ i18n.Teacher}}</option></select>
+        </div>
+    </fieldset>
+
+    <div class="form-group">
+		<button type="submit" class="btn btn-primary btn-block" ng-disabled="userVO.email==undefined || userVO.email=='' || userVO.password=='' || userVO.password==undefined">
+		{{ i18n.Enter }}
+		</button>
+	</div>
+
+    <div ui-content-for="navbarMenu">
+    </div>
+
+    <div ui-content-for="navbarAction">
+    </div>
+  </form>
+ </div>
+</div>

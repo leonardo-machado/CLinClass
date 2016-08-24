@@ -1,0 +1,56 @@
+<div ui-content-for="title">
+  <span>{{i18n.Groups}}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+       <div class="btn">
+           <button type="button" class="btn btn-link" ng-click="addGroup_Click()" ng-hide="addGroup"><i class="fa fa-plus"></i></button>
+           <button type="button" class="btn btn-link" ng-click="addGroup_Click()" ng-show="addGroup"><i class="fa fa-minus"></i></button>
+       </div>
+    </div>
+
+<div class="scrollable">
+	<div class="section animate-show" ng-show="addGroup">
+		<form role="form">
+			<fieldset>
+				<div class="form-group">
+					<label>{{ i18n.Class  }}</label>
+					<select class="form-control" ng-model="group.classroom">
+					    <option ng-repeat="option in classVO" value="{{option.code}}">{{option.name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Id }}</label>
+					<input type="text" class="form-control" name="code" ng-model="group.code" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Name }}</label>
+					<input type="text" class="form-control" name="name" ng-model="group.name" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Max_Member }}</label>
+					<input type="number" class="form-control" name="max_member" ng-model="group.max_member" />
+				</div>
+				<div class="form-group">
+					<button type="button" ng-click="saveGroup()" class="btn btn-primary btn-block">{{i18n.Save}}</button>
+				</div>
+			</fieldset>
+		</form>     
+	</div>
+
+ <div class="scrollable-content">
+    <div class="list-group">
+      <span ng-repeat="item in groupVO" class="list-group-item">
+       <a href="" ng-click="disableGroup(item)"><i class="fa fa-circle pull-left" ui-class="{'text-success': {{item.active}} == true, 'text-muted': {{item.active}} == false}"></i></a>{{ item.code }} - {{ item.name }} <a href="" ng-click="removeGroup(item)"><i class="fa fa-trash pull-right"></i></a> <br/> <small>{{ i18n.Max_Member }}: {{ item.max_member }} - {{ i18n.Class  }} : {{ getClassName(item.classroom) }}</small>       
+      </span>
+    </div>
+ </div>
+</div>
+</div>

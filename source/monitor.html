@@ -1,0 +1,31 @@
+<div ui-content-for="title">
+  <span>{{i18n.Monitor}}</span>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content" ng-init="loadInfo()">
+    <div class="list-group">
+      <div class="list-group-item" ng-repeat="group in classGroups">
+        <h4 class="text-center">{{group.name}}</h4>
+           <div ng-repeat="student in studentsFromGroup(group.code)">
+		      <div class="panel panel-default">
+			     <div class="panel-heading">
+			        <b>{{student.name}}</b>
+
+                    <div class="btn-group pull-right">
+                      <button type="button" class="btn btn-link" ui-turn-on="showActivity" ui-hide="showActivity"><i class="fa fa-plus"></i></button>
+                      <button type="button" class="btn btn-link" ui-turn-off="showActivity" ui-show="showActivity"><i class="fa fa-minus"></i></button>
+					</div>
+					
+			     </div>
+			     <div class="panel-body" > <!--ui-state="showActivity" ui-show="showActivity"-->
+                    <div ng-repeat="activity in activitiesClass">
+			           <i class="fa fa-check pull-left" ng-show="hasResponse(activity.code,student.email)"></i><i class="fa fa-thumbs-o-up pull-left" ng-show="hasConsensus(activity.code,student.email)"></i>{{activity.name}} <a ng-click="showConsensusResponse(activity, group.code)" href="" class="pull-right link-btn"><i class="fa fa-users" ng-show="hasConsensus(activity.code,student.email)"></i></a><a ng-click="showIndividualResponse(activity,student.email)" href="" class="pull-right link-btn"><i class="fa fa-user" ng-show="hasResponse(activity.code,student.email)"></i></a>
+			        </div>
+			     </div>
+			  </div>
+		   </div>
+      </div>
+	</div>
+  </div>
+</div>

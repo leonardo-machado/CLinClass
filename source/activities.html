@@ -1,0 +1,84 @@
+<div ui-content-for="title">
+  <span>{{i18n.Activities}}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+       <div class="btn">
+           <button type="button" class="btn btn-link" ng-click="addActivitie_Click()" ng-hide="addActivitie"><i class="fa fa-plus"></i></button>
+           <button type="button" class="btn btn-link" ng-click="addActivitie_Click()" ng-show="addActivitie"><i class="fa fa-minus"></i></button>
+       </div>
+    </div>
+
+<div class="scrollable">
+ <div class="scrollable-content">
+	<div class="section animate-show" ng-show="addActivitie">
+		<form role="form">
+			<fieldset>
+				<div class="form-group">
+					<label>{{ i18n.Class  }}</label>
+					<select class="form-control" ng-model="activitie.classroom">
+					    <option ng-repeat="option in classVO" value="{{option.code}}">{{option.name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>{{ i18n.Type  }}</label>
+					<select class="form-control" ng-model="activitie.type">
+					    <option value="1">{{i18n.Type_MultiChoiseProblem}}</option>
+					    <option value="2">{{i18n.Type_ParsonProblem}}</option>
+					    <option value="3">{{i18n.Type_OpenProblem}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Id }}</label>
+					<input type="text" class="form-control" name="code" ng-model="activitie.code" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Title }}</label>
+					<input type="text" class="form-control" name="name" ng-model="activitie.name" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Description }}</label>
+					<textarea class="form-control" name="description" ng-model="activitie.description"></textarea>
+				</div>
+				<div class="form-group" ng-show="activitie.type == 1">
+                    <label>{{ i18n.OptionA }}</label>
+					<textarea class="form-control" name="optionA" ng-model="activitie.optiona"></textarea>
+				</div>
+				<div class="form-group" ng-show="activitie.type == 1">
+                    <label>{{ i18n.OptionB }}</label>
+					<textarea class="form-control" name="optionB" ng-model="activitie.optionb"></textarea>
+				</div>
+				<div class="form-group" ng-show="activitie.type == 1">
+                    <label>{{ i18n.OptionC }}</label>
+					<textarea class="form-control" name="optionC" ng-model="activitie.optionc"></textarea>
+				</div>
+				<div class="form-group" ng-show="activitie.type == 1">
+                    <label>{{ i18n.OptionD }}</label>
+					<textarea class="form-control" name="optionD" ng-model="activitie.optiond"></textarea>
+				</div>
+				<div class="form-group" ng-show="activitie.type == 2">
+                    <label>{{ i18n.Algorithm }}</label>
+					<textarea class="form-control" name="algorithm" ng-model="activitie.algorithm"></textarea>
+				</div>
+				<div class="form-group">
+					<button type="button" ng-click="saveActivitie()" class="btn btn-primary btn-block">{{i18n.Save}}</button>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+
+    <div class="list-group">
+      <span ng-repeat="item in activitieVO" class="list-group-item">
+       {{ item.code }} - {{ item.name }} <a href="" ng-click="removeActivitie(item)"><i class="fa fa-trash pull-right"></i></a> <br/> <small>{{ i18n.Class  }} : {{ getClassName(item.classroom) }}</small>       
+      </span>
+    </div>
+ </div>
+</div>
+</div>

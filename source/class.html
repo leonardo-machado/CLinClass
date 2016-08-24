@@ -1,0 +1,47 @@
+<div ui-content-for="title">
+  <span>{{i18n.Class}}</span>
+</div>
+
+<div ng-controller="MainController">
+    <div ui-content-for="navbarMenu">
+      <div class="btn">
+        <button type="button" class="btn btn-link" ng-click="back()"><i class="fa fa-arrow-left"></i></button>
+      </div>
+    </div>
+
+	<div ui-content-for="navbarAction">
+       <div class="btn">
+           <button type="button" class="btn btn-link" ng-click="addClass_Click()" ng-hide="addClass"><i class="fa fa-plus"></i></button>
+           <button type="button" class="btn btn-link" ng-click="addClass_Click()" ng-show="addClass"><i class="fa fa-minus"></i></button>
+       </div>
+    </div>
+
+<div class="scrollable">
+	<div class="section animate-show" ng-show="addClass">
+		<form role="form">
+			<fieldset>
+				<div class="form-group">
+                    <label>{{ i18n.Id }}</label>
+					<input type="text" class="form-control" name="code" ng-model="classroom.code" />
+				</div>
+				<div class="form-group">
+                    <label>{{ i18n.Name }}</label>
+					<input type="text" class="form-control" name="class_name" ng-model="classroom.name" />
+				</div>
+				<div class="form-group">
+					<button type="button" ng-click="saveClass()" ng-disabled="classroom.code==undefined || classroom.code=='' || classroom.name==undefined || classroom.name==''" class="btn btn-primary btn-block">{{i18n.Save}}</button>
+				</div>
+			</fieldset>
+		</form>     
+	</div>
+
+ <div class="scrollable-content">
+    <div class="list-group">
+	<!-- ng-click="removeClass(item)" -->
+      <span ng-repeat="item in classVO" class="list-group-item">
+        {{ item.code }} - {{ item.name }}       <a href="" ng-click="removeClass(item)"><i class="fa fa-trash pull-right"></i></a>
+      </span>
+    </div>
+ </div>
+</div>
+</div>
